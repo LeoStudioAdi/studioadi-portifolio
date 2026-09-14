@@ -21,7 +21,7 @@ manifesto:
   frase_linha3: " "
   subtitulo: Histórias distintas, projetos únicos.
   marca_linha1: Studio ADI®
-  marca_linha2: desde 2018
+  marca_linha2: " "
 indice:
   titulo_linha1: Projetos
   titulo_linha2: que contam
@@ -84,8 +84,8 @@ categorias:
     frase_abertura_linha1: Edifício
     frase_abertura_linha2: que assina
     frase_abertura_linha3: "**uma esquina.**"
-    nome_indice: Multifamiliar
-    nome: Multifamiliar
+    nome_indice: Edifícios
+    nome: Edifícios
     desc_indice: Edifícios inteiros, escala de incorporação, gestão e desenho.
   - slug: cat-06
     local: São Paulo · BR
