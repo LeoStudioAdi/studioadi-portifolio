@@ -1,0 +1,10 @@
+{
+  "name": "studio-adi-site",
+  "version": "1.0.0",
+  "description": "Site do Studio ADI — gerado a partir dos arquivos em /content. Sem dependências externas.",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "license": "UNLICENSED"
+}

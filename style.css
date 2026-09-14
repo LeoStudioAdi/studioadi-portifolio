@@ -1,0 +1,1091 @@
+
+:root {
+  --sora: 'Sora', system-ui, sans-serif;
+  /* "serif" agora é apenas Sora em peso fino — nome mantido por compatibilidade com classes existentes */
+  --serif: 'Sora', system-ui, sans-serif;
+}
+
+/* Cada categoria/projeto pode redefinir esses tokens */
+.scope-default {
+  --bg: #E6E0D5;
+  --ink: #000000;
+  --ink-soft: #6b675e;
+  --line: rgba(0, 0, 0,0.12);
+  --accent: #000000;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+em, i { font-style: normal; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sora);
+  font-weight: 300;
+  background: var(--bg, #E6E0D5);
+  color: var(--ink, #000000);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "ss02";
+}
+
+img { display: block; max-width: 100%; }
+
+/* ===================================================== */
+/* ============= ÍNDICE RECOLHÍVEL ====================== */
+/* ===================================================== */
+.aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  z-index: 100;
+  background: rgba(230, 224, 213, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(0, 0, 0,0.08);
+  transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.4s, border-color 0.4s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+.aside:hover {
+  width: 320px;
+  background: rgba(230, 224, 213, 0.96);
+}
+
+/* Quando estamos numa seção dark, a aside vira dark também */
+body.dark-aside .aside {
+  background: rgba(0, 0, 0, 0.7);
+  border-right-color: rgba(255,255,255,0.1);
+}
+body.dark-aside .aside:hover {
+  background: rgba(0, 0, 0, 0.92);
+}
+body.dark-aside .aside,
+body.dark-aside .aside a { color: #E6E0D5; }
+body.dark-aside .marca-svg path { fill: #E6E0D5; }
+
+.aside .marca {
+  padding: 0 14px 28px;
+  border-bottom: 1px solid rgba(0, 0, 0,0.08);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  transition: border-color 0.4s, padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aside:hover .marca {
+  padding: 0 22px 28px;
+}
+body.dark-aside .aside .marca { border-bottom-color: rgba(255,255,255,0.1); }
+
+.marca-svg { flex-shrink: 0; transition: transform 0.4s; }
+
+/* Logo PNG na aside (07 = símbolo isolado) — alterna entre preto e branco
+   conforme a seção visível, igual o SVG fazia */
+.aside .marca-img {
+  flex-shrink: 0;
+  height: 16px;
+  width: auto;
+  display: block;
+  transition: opacity 0.35s, height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aside:hover .marca-img {
+  height: 22px;
+}
+.aside .marca-img.is-dark { display: none; }
+body.dark-aside .aside .marca-img.is-light { display: none; }
+body.dark-aside .aside .marca-img.is-dark { display: block; }
+
+.marca-text {
+  opacity: 0;
+  transition: opacity 0.3s 0.05s;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+body.dark-aside .marca-text { color: rgba(230, 224, 213,0.6); }
+.aside:hover .marca-text { opacity: 1; }
+
+.aside-tag {
+  padding: 0 22px;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.3s 0.05s;
+  font-weight: 500;
+}
+body.dark-aside .aside-tag { color: rgba(230, 224, 213,0.5); }
+.aside:hover .aside-tag { opacity: 1; }
+
+.aside-list { list-style: none; flex: 1; }
+
+.aside-list a {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 22px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  position: relative;
+  white-space: nowrap;
+  transition: background 0.25s, color 0.25s;
+}
+body.dark-aside .aside a { color: #E6E0D5; }
+
+.aside-list a:hover { background: rgba(0, 0, 0,0.04); }
+body.dark-aside .aside-list a:hover { background: rgba(255,255,255,0.06); }
+
+.aside-num {
+  font-family: var(--sora);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+body.dark-aside .aside-num { color: rgba(230, 224, 213,0.55); }
+
+.aside-name {
+  opacity: 0;
+  transition: opacity 0.3s 0.08s;
+  letter-spacing: 0.005em;
+}
+.aside:hover .aside-name { opacity: 1; }
+
+.aside-count {
+  opacity: 0;
+  transition: opacity 0.3s 0.08s;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+body.dark-aside .aside-count { color: rgba(230, 224, 213,0.4); }
+.aside:hover .aside-count { opacity: 1; }
+
+.aside-foot {
+  padding: 24px 22px 0;
+  border-top: 1px solid rgba(0, 0, 0,0.08);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  opacity: 0;
+  transition: opacity 0.3s, border-color 0.4s;
+  white-space: nowrap;
+}
+body.dark-aside .aside-foot {
+  border-top-color: rgba(255,255,255,0.1);
+  color: rgba(230, 224, 213,0.45);
+}
+.aside:hover .aside-foot { opacity: 1; }
+
+/* Conteúdo respira além do índice */
+.main { margin-left: 72px; }
+
+/* ===================================================== */
+/* ============= UTILITÁRIOS DE ESCALA ================== */
+/* ===================================================== */
+.serif { font-family: var(--sora); font-weight: 200; }
+.serif-i { font-family: var(--sora); font-weight: 300; font-style: normal; }
+
+.tag-meta {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.divider-thin {
+  height: 1px;
+  background: var(--line);
+  border: none;
+}
+
+/* ===================================================== */
+/* ============= CAPA / SISTEMA DE AVISO ================ */
+/* ===================================================== */
+/* A capa e as aberturas de categoria compartilham o mesmo
+   sistema visual: tipografia pesada, paleta camaleão, grain.
+   Cada uma redefine --bg-page, --ink-page, --accent-page e --line-page. */
+
+.capa {
+  min-height: 100vh;
+  background: #000000;
+  color: #E6E0D5;
+  --ink-soft-page: rgba(230, 224, 213,0.6);
+  --accent-page: #BF663D;
+  --line-page: rgba(230, 224, 213,0.18);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 8vh 8vw 4vh;
+  overflow: hidden;
+}
+
+/* GRAIN sutil em cima do fundo (mesma textura que aparece nas aberturas) */
+.capa::before,
+.cat-abrir::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  z-index: 1;
+}
+
+.capa-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  z-index: 5;
+}
+
+.capa-marca-txt {
+  font-family: var(--sora);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+.capa-marca-txt em {
+  font-style: normal;
+  font-weight: 200;
+}
+
+.capa-top .info-block {
+  text-align: right;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft-page);
+  line-height: 2;
+  font-weight: 500;
+}
+
+.capa-meio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6vh;
+  padding: 4vh 0;
+  position: relative;
+  z-index: 5;
+}
+
+.capa-logo {
+  display: block;
+  width: clamp(380px, 50vw, 720px);
+  height: auto;
+}
+
+.capa-descritiva {
+  font-family: var(--sora);
+  text-align: center;
+  line-height: 1.6;
+  color: #E6E0D5;
+}
+.capa-descritiva .l1 {
+  font-weight: 600;
+  font-size: clamp(13px, 1.3vw, 18px);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.capa-descritiva .l2 {
+  font-weight: 300;
+  font-size: clamp(12px, 1.1vw, 15px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 6px 0;
+}
+.capa-descritiva .l3 {
+  font-weight: 600;
+  font-size: clamp(13px, 1.3vw, 18px);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.capa-frase {
+  font-family: var(--sora);
+  font-weight: 700;
+  font-size: clamp(56px, 11vw, 180px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+.capa-frase em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent-page);
+}
+
+.capa-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-page);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft-page);
+  font-weight: 500;
+  position: relative;
+  z-index: 5;
+}
+.capa-base .descricao {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink-soft-page);
+}
+
+/* legacy — mantém pra retrocompatibilidade */
+.capa-titulo {
+  font-family: var(--sora);
+  font-weight: 200;
+  font-size: clamp(72px, 14vw, 220px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+.capa-titulo em { font-style: normal; font-weight: 200; }
+.capa-simbolo { display: none; } /* não usamos mais o símbolo gigante na capa */
+
+/* ===================================================== */
+/* ============= MANIFESTO ============================== */
+/* ===================================================== */
+.manifesto {
+  min-height: 100vh;
+  background: #000000;
+  color: #E6E0D5;
+  --ink: #E6E0D5;
+  --ink-soft: rgba(230, 224, 213,0.55);
+  --line: rgba(230, 224, 213,0.15);
+  padding: 10vh 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto-tag {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 64px;
+  font-weight: 500;
+}
+
+.manifesto-frase {
+  font-family: var(--sora);
+  font-weight: 200;
+  font-size: clamp(52px, 9.5vw, 160px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin-bottom: 56px;
+  max-width: 14ch;
+}
+.manifesto-frase em { font-style: normal; font-weight: 400; color: #E6E0D5; }
+
+.manifesto-sub {
+  font-family: var(--sora);
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--ink-soft);
+  max-width: 36ch;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+.manifesto-marca {
+  position: absolute;
+  bottom: 10vh;
+  right: 8vw;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: right;
+  line-height: 2;
+  font-weight: 500;
+}
+
+.manifesto-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: auto;
+  max-width: 100vw;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.manifesto-bg svg { height: 100%; width: auto; }
+.manifesto-bg svg path { fill: #E6E0D5; }
+.manifesto-bg img { height: 100%; width: auto; display: block; }
+
+/* garante que o conteúdo do manifesto fique acima da marca d'água */
+.manifesto > *:not(.manifesto-bg) { position: relative; z-index: 1; }
+
+/* ===================================================== */
+/* ============= ÍNDICE GERAL =========================== */
+/* ===================================================== */
+.indice {
+  background: #E6E0D5;
+  color: #000000;
+  --ink-soft: #6b675e;
+  --line: rgba(0, 0, 0,0.12);
+  min-height: 100vh;
+  padding: 10vh 8vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.indice-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+
+.indice-titulo {
+  font-family: var(--sora);
+  font-weight: 200;
+  font-size: clamp(44px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.indice-titulo em { font-style: normal; font-weight: 400; }
+
+.indice-intro {
+  font-family: var(--sora);
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 44ch;
+  letter-spacing: -0.005em;
+}
+
+.indice-list { display: flex; flex-direction: column; }
+
+.indice-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 1.4fr auto;
+  gap: 48px;
+  align-items: baseline;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: padding-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.indice-item:last-child { border-bottom: 1px solid var(--line); }
+.indice-item:hover { padding-left: 24px; }
+
+.indice-item .num {
+  font-family: var(--sora);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+.indice-item .nome {
+  font-family: var(--sora);
+  font-weight: 200;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+.indice-item .nome em { font-style: normal; font-weight: 400; }
+.indice-item .desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.indice-item .count {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ===================================================== */
+/* ============= ABERTURA DE CATEGORIA ================== */
+/* ===================================================== */
+/* Mesmo sistema da capa: tipografia pesada, paleta camaleão,
+   palavra-chave em cor de acento. A paleta é definida em
+   .cat-01 ... .cat-06 abaixo. */
+
+.cat-abrir {
+  min-height: 100vh;
+  padding: 8vh 8vw 4vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-abrir-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  z-index: 5;
+}
+.cat-abrir-marca {
+  font-family: var(--sora);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+.cat-abrir-marca em {
+  font-style: normal;
+  font-weight: 200;
+}
+
+.cat-abrir-num {
+  font-family: var(--sora);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft-page);
+  margin-top: 4px;
+}
+
+.cat-abrir-info {
+  text-align: right;
+  font-family: var(--sora);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 2;
+  color: var(--ink-soft-page);
+}
+
+.cat-abrir-meio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 8vh 0 6vh;
+  position: relative;
+  z-index: 5;
+}
+.cat-abrir-titulo {
+  font-family: var(--sora);
+  font-weight: 700;
+  font-size: clamp(56px, 11vw, 180px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  max-width: 13ch;
+}
+.cat-abrir-titulo em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent-page);
+}
+
+.cat-abrir-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-page);
+  position: relative;
+  z-index: 5;
+}
+.cat-abrir-foot-titulo {
+  font-family: var(--sora);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-soft-page);
+}
+.cat-abrir-foot-pag {
+  font-family: var(--sora);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-soft-page);
+}
+
+/* legacy — campos antigos da R09, escondidos */
+.cat-abrir-intro,
+.cat-abrir-list,
+.cat-abrir-meta,
+.cat-abrir-bg { display: none; }
+
+/* ============= Paleta camaleão por categoria ========== */
+
+/* CAT 01 · Habitações remotas — preto + verde-mata */
+.cat-01 {
+  background: #000000;
+  color: #E6E0D5;
+  --ink-soft-page: rgba(230, 224, 213,0.6);
+  --accent-page: #41886E;
+  --line-page: rgba(230, 224, 213,0.18);
+}
+
+/* CAT 02 · Casas — papel + terracota */
+.cat-02 {
+  background: #E6E0D5;
+  color: #000000;
+  --ink-soft-page: rgba(0, 0, 0,0.55);
+  --accent-page: #BF663D;
+  --line-page: rgba(0, 0, 0,0.18);
+}
+
+/* CAT 03 · Apartamentos — papel quente + terracota
+   (apartamentos são interiores urbanos, paleta mais quente que cat-02) */
+.cat-03 {
+  background: #ebe3d3;
+  color: #2c241c;
+  --ink-soft-page: rgba(44,36,28,0.55);
+  --accent-page: #BF663D;
+  --line-page: rgba(44,36,28,0.18);
+}
+
+/* CAT 04 · Comercial — off-white + verde */
+.cat-04 {
+  background: #E4E4E4;
+  color: #000000;
+  --ink-soft-page: rgba(0, 0, 0,0.55);
+  --accent-page: #41886E;
+  --line-page: rgba(0, 0, 0,0.18);
+}
+
+/* CAT 05 · Multifamiliar — grafite + coral */
+.cat-05 {
+  background: #2a2a2a;
+  color: #E6E0D5;
+  --ink-soft-page: rgba(230, 224, 213,0.55);
+  --accent-page: #D17A5E;
+  --line-page: rgba(230, 224, 213,0.18);
+}
+
+/* CAT 06 · Outros — papel + acento preto invertido */
+.cat-06 {
+  background: #E6E0D5;
+  color: #000000;
+  --ink-soft-page: rgba(0, 0, 0,0.55);
+  --accent-page: #000000;
+  --line-page: rgba(0, 0, 0,0.18);
+}
+.cat-06 .cat-abrir-titulo em {
+  background: #000000;
+  color: #E6E0D5;
+  padding: 0 0.15em;
+}
+
+/* ===================================================== */
+/* ============= PROJETO ================================ */
+/* ===================================================== */
+.projeto {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 80px;
+}
+
+/* Cabeçalho do projeto */
+.projeto-head {
+  padding: 0 8vw 32px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* Hero edge-to-edge */
+.projeto-hero {
+  width: 100%;
+  height: 78vh;
+  overflow: hidden;
+  position: relative;
+}
+.projeto-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.projeto-hero-cap {
+  position: absolute;
+  bottom: 32px;
+  left: 8vw;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  padding: 8px 14px;
+  font-weight: 500;
+}
+
+/* Corpo do projeto */
+.projeto-corpo {
+  padding: 80px 8vw;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.projeto-titulo {
+  font-family: var(--sora);
+  font-weight: 200;
+  font-size: clamp(40px, 5.5vw, 84px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin-bottom: 12px;
+}
+.projeto-titulo em { font-style: normal; font-weight: 400; }
+
+.projeto-localizacao {
+  font-family: var(--sora);
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 56px;
+  letter-spacing: -0.005em;
+}
+
+.projeto-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 52ch;
+  margin-bottom: 16px;
+}
+.projeto-desc em { font-style: normal; font-weight: 500; color: var(--ink); }
+
+.projeto-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dado {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.dado:first-child { border-top: 1px solid var(--line); }
+.dado .label { color: var(--ink-soft); font-weight: 400; }
+.dado .val { color: var(--ink); font-weight: 500; }
+
+/* Galeria do projeto */
+.projeto-galeria {
+  padding: 0 8vw 120px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 200px;
+  gap: 16px;
+}
+
+.projeto-galeria figure { margin: 0; overflow: hidden; }
+.projeto-galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.projeto-galeria figure:hover img { transform: scale(1.03); }
+
+/* Grid presets */
+.g-wide { grid-column: span 8; grid-row: span 2; }
+.g-third { grid-column: span 4; grid-row: span 2; }
+.g-half { grid-column: span 6; grid-row: span 2; }
+.g-tall { grid-column: span 5; grid-row: span 3; }
+.g-fill { grid-column: span 7; grid-row: span 3; }
+
+/* Paletas reutilizáveis dos projetos (camaleão)
+   Cada projeto escolhe uma dessas 9 paletas no campo "paleta" do CMS.
+   Os valores abaixo são os mesmos usados nos 9 projetos originais do site —
+   só os nomes das classes deixaram de ser um-por-projeto para serem
+   reutilizáveis por qualquer projeto novo. */
+
+.accent-line {
+  position: absolute;
+  top: 0;
+  left: 8vw;
+  width: 60px;
+  height: 3px;
+}
+
+.paleta-areia {
+  background: #ebe3d3;
+  color: #2c241c;
+  --bg: #ebe3d3;
+  --ink: #2c241c;
+  --ink-soft: rgba(44,36,28,0.55);
+  --line: rgba(44,36,28,0.18);
+}
+
+.paleta-neblina {
+  background: #eef2f1;
+  color: #1c2226;
+  --bg: #eef2f1;
+  --ink: #1c2226;
+  --ink-soft: rgba(28,34,38,0.55);
+  --line: rgba(28,34,38,0.15);
+}
+
+.paleta-carvao {
+  background: #000000;
+  color: #efe9d9;
+  --bg: #000000;
+  --ink: #efe9d9;
+  --ink-soft: rgba(239,233,217,0.55);
+  --line: rgba(239,233,217,0.15);
+}
+
+.paleta-pedra {
+  background: #e8e6df;
+  color: #14140f;
+  --bg: #e8e6df;
+  --ink: #14140f;
+  --ink-soft: rgba(20,20,15,0.5);
+  --line: rgba(20,20,15,0.14);
+}
+
+.paleta-nogueira {
+  background: #1f1a14;
+  color: #d8c9ad;
+  --bg: #1f1a14;
+  --ink: #d8c9ad;
+  --ink-soft: rgba(216,201,173,0.55);
+  --line: rgba(216,201,173,0.18);
+}
+
+.paleta-osso {
+  background: #f0eadd;
+  color: #2a241a;
+  --bg: #f0eadd;
+  --ink: #2a241a;
+  --ink-soft: rgba(42,36,26,0.55);
+  --line: rgba(42,36,26,0.16);
+}
+
+.paleta-marfim {
+  background: #f1ede4;
+  color: #14140f;
+  --bg: #f1ede4;
+  --ink: #14140f;
+  --ink-soft: rgba(20,20,15,0.5);
+  --line: rgba(20,20,15,0.14);
+}
+.paleta-marfim .accent-line { background: #BF663D; }
+
+.paleta-cacau {
+  background: #2e2519;
+  color: #e8dcc4;
+  --bg: #2e2519;
+  --ink: #e8dcc4;
+  --ink-soft: rgba(232,220,196,0.55);
+  --line: rgba(232,220,196,0.16);
+}
+
+.paleta-grafite {
+  background: #1d2226;
+  color: #e8e4dd;
+  --bg: #1d2226;
+  --ink: #e8e4dd;
+  --ink-soft: rgba(232,228,221,0.55);
+  --line: rgba(232,228,221,0.18);
+}
+.paleta-grafite .accent-line { background: #d04c2a; }
+
+/* Marcador de scroll suave entre seções escuras */
+.section-edge {
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* ===================================================== */
+/* ============= CONTATO FINAL ========================== */
+/* ===================================================== */
+.contato {
+  min-height: 100vh;
+  background: #000000;
+  color: #E6E0D5;
+  --ink: #E6E0D5;
+  --ink-soft: rgba(230, 224, 213,0.55);
+  --line: rgba(230, 224, 213,0.15);
+  padding: 14vh 8vw 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.contato-tag {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.contato-titulo {
+  font-family: var(--sora);
+  font-weight: 200;
+  font-size: clamp(60px, 10vw, 180px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 96px;
+  max-width: 14ch;
+}
+.contato-titulo em { font-style: normal; font-weight: 400; }
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+
+.contato-bloco { display: flex; flex-direction: column; gap: 12px; }
+
+.contato-label {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.contato-valor {
+  font-family: var(--sora);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.005em;
+}
+
+.contato-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.contato-marca-final {
+  margin-top: 96px;
+  display: flex;
+  justify-content: center;
+}
+.contato-marca-final img {
+  height: 32px;
+  width: auto;
+  opacity: 0.7;
+}
+
+/* ===================================================== */
+/* ============= MOBILE ================================= */
+/* ===================================================== */
+@media (max-width: 768px) {
+  /* aside some totalmente no mobile - leitura linear pura */
+  .aside { display: none; }
+  .main { margin-left: 0; }
+
+  /* capa: topo em coluna, logo encolhe, descritiva proporcional */
+  .capa-top { flex-direction: column; gap: 16px; }
+  .capa-top .info-block { text-align: left; font-size: 9px; line-height: 1.8; }
+  .capa-marca-txt { font-size: 12px; }
+  .capa-meio { gap: 4vh; padding: 3vh 0; }
+  .capa-logo { width: min(72vw, 320px); }
+  .capa-descritiva .l1 { font-size: 11px; letter-spacing: 0.28em; }
+  .capa-descritiva .l2 { font-size: 10px; letter-spacing: 0.18em; }
+  .capa-descritiva .l3 { font-size: 11px; letter-spacing: 0.28em; }
+  .capa-base { font-size: 9px; }
+  .capa-base .descricao { letter-spacing: 0.18em; }
+
+  /* manifesto: tipografia reduzida, padding interno ajustado */
+  .manifesto { padding: 12vh 6vw; }
+  .manifesto-frase { font-size: clamp(36px, 9vw, 64px); line-height: 1.05; }
+  .manifesto-sub { font-size: 14px; }
+  .manifesto-tag { font-size: 9px; letter-spacing: 0.28em; }
+
+  /* índice: lista vertical limpa */
+  .indice { padding: 10vh 6vw; }
+  .indice-top { grid-template-columns: 1fr; gap: 24px; }
+  .indice-titulo { font-size: clamp(32px, 8vw, 48px); }
+  .indice-intro { font-size: 13px; line-height: 1.6; }
+  .indice-item { grid-template-columns: 32px 1fr auto; gap: 12px; padding: 18px 0; }
+  .indice-item:hover { padding-left: 0; }
+  .indice-item .desc { display: none; }
+  .indice-item .nome { font-size: 16px; }
+
+  /* aberturas de categoria: frase reduzida, padding menor */
+  .cat-abrir { padding: 14vh 6vw; }
+  .cat-abrir .capa-frase,
+  .cat-abrir .capa-titulo { font-size: clamp(40px, 11vw, 72px); line-height: 1.05; }
+
+  /* hero do projeto: 60vh no mobile */
+  .projeto-hero { height: 60vh; }
+  .projeto-hero-cap { font-size: 9px; bottom: 16px; left: 6vw; right: 6vw; }
+
+  /* head do projeto: empilhar em coluna, padding ajustado */
+  .projeto-head { flex-direction: column; gap: 6px; padding: 8vh 6vw 24px; font-size: 9px; }
+  .projeto-head h2 { font-size: clamp(32px, 8vw, 56px); }
+
+  /* corpo do projeto: coluna única, gap menor */
+  .projeto-corpo { padding: 4vh 6vw 8vh; grid-template-columns: 1fr; gap: 32px; }
+
+  /* galeria: coluna única, altura controlada */
+  .projeto-galeria { padding: 0 6vw 8vh; grid-template-columns: 1fr; grid-auto-rows: 50vh; gap: 12px; }
+  .g-wide, .g-third, .g-half, .g-tall, .g-fill { grid-column: span 1; grid-row: span 1; }
+
+  /* contato: coluna única */
+  .contato { padding: 12vh 6vw; }
+  .contato-grid { grid-template-columns: 1fr; gap: 24px; }
+}

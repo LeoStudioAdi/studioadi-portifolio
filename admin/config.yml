@@ -1,0 +1,172 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Pasta onde ficam as fotos novas que você enviar pelo painel.
+media_folder: "img/uploads"
+public_folder: "img/uploads"
+
+locale: "pt"
+
+collections:
+  # ---------------------------------------------------------------
+  # Conteúdo geral do site (capa, manifesto, índice, contato,
+  # categorias) — um único arquivo editável.
+  # ---------------------------------------------------------------
+  - name: "geral"
+    label: "Conteúdo geral do site"
+    files:
+      - name: "settings"
+        label: "Textos gerais"
+        file: "content/settings.yml"
+        fields:
+          - { label: "Título da aba do navegador", name: "site_title", widget: "string" }
+
+          - label: "Marca / logo"
+            name: "marca"
+            widget: "object"
+            fields:
+              - { label: "Nome (use **assim** para destacar parte do texto)", name: "nome", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+              - { label: "Logo — fundo claro", name: "logo_claro", widget: "image" }
+              - { label: "Logo — fundo escuro", name: "logo_escuro", widget: "image" }
+
+          - label: "Rodapé do menu lateral"
+            name: "rodape_menu"
+            widget: "object"
+            fields:
+              - { label: "Cidade", name: "cidade", widget: "string" }
+              - { label: "E-mail", name: "email", widget: "string" }
+
+          - label: "Capa"
+            name: "capa"
+            widget: "object"
+            fields:
+              - { label: "Info — linha 1", name: "info_linha1", widget: "string" }
+              - { label: "Info — linha 2", name: "info_linha2", widget: "string" }
+              - { label: "Info — linha 3", name: "info_linha3", widget: "string" }
+              - { label: "Descritiva — linha 1", name: "descritiva_l1", widget: "string" }
+              - { label: "Descritiva — linha 2", name: "descritiva_l2", widget: "string" }
+              - { label: "Descritiva — linha 3", name: "descritiva_l3", widget: "string" }
+              - { label: "Slogan (linha pequena embaixo do logo)", name: "descricao", widget: "string" }
+
+          - label: "Manifesto"
+            name: "manifesto"
+            widget: "object"
+            fields:
+              - { label: "Frase — linha 1", name: "frase_linha1", widget: "string" }
+              - { label: "Frase — linha 2", name: "frase_linha2", widget: "string" }
+              - { label: "Frase — linha 3 (use **assim** p/ destacar)", name: "frase_linha3", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+              - { label: "Marca — linha 1", name: "marca_linha1", widget: "string" }
+              - { label: "Marca — linha 2", name: "marca_linha2", widget: "string" }
+
+          - label: "Índice"
+            name: "indice"
+            widget: "object"
+            fields:
+              - { label: "Título — linha 1", name: "titulo_linha1", widget: "string" }
+              - { label: "Título — linha 2", name: "titulo_linha2", widget: "string" }
+              - { label: "Título — linha 3 (use **assim** p/ destacar)", name: "titulo_linha3", widget: "string" }
+              - { label: "Texto de introdução", name: "intro", widget: "text" }
+
+          - label: "Contato (seção final)"
+            name: "contato"
+            widget: "object"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Título — linha 1", name: "titulo_linha1", widget: "string" }
+              - { label: "Título — linha 2 (use **assim** p/ destacar)", name: "titulo_linha2", widget: "string" }
+              - { label: "E-mail", name: "email", widget: "string" }
+              - { label: "Instagram — texto exibido", name: "instagram_label", widget: "string" }
+              - { label: "Instagram — link", name: "instagram_link", widget: "string" }
+              - { label: "Telefone — texto exibido", name: "telefone_label", widget: "string" }
+              - { label: "Telefone — link (tel:...)", name: "telefone_link", widget: "string" }
+              - { label: "Rodapé — linha 1", name: "rodape_linha1", widget: "string" }
+              - { label: "Rodapé — linha 2", name: "rodape_linha2", widget: "string" }
+              - { label: "Logo final", name: "logo_final", widget: "image" }
+
+          - label: "Categorias"
+            name: "categorias"
+            widget: "list"
+            summary: "{{nome}}"
+            fields:
+              - { label: "Identificador (não altere)", name: "slug", widget: "select", options: ["cat-01", "cat-02", "cat-03", "cat-04", "cat-05", "cat-06"] }
+              - { label: "Nome da categoria", name: "nome", widget: "string" }
+              - { label: "Nome no índice (use **assim** p/ destacar)", name: "nome_indice", widget: "string" }
+              - { label: "Descrição no índice", name: "desc_indice", widget: "text" }
+              - { label: "Frase de abertura — linha 1", name: "frase_abertura_linha1", widget: "string" }
+              - { label: "Frase de abertura — linha 2", name: "frase_abertura_linha2", widget: "string" }
+              - { label: "Frase de abertura — linha 3 (use **assim** p/ destacar)", name: "frase_abertura_linha3", widget: "string" }
+              - { label: "Período (ex.: 2020 — 2026)", name: "periodo", widget: "string" }
+              - { label: "Local (ex.: São Paulo · BR)", name: "local", widget: "string" }
+
+  # ---------------------------------------------------------------
+  # Projetos — cada projeto é um arquivo. Adicionar/remover projeto
+  # aqui atualiza sozinho as contagens do menu, do índice e das
+  # páginas de abertura de categoria.
+  # ---------------------------------------------------------------
+  - name: "projetos"
+    label: "Projetos"
+    folder: "content/projetos"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{titulo}} — {{categoria}}"
+    fields:
+      - { label: "Título (use **assim** para destacar parte do nome)", name: "titulo", widget: "string" }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "01 · Habitações remotas", value: "cat-01" }
+          - { label: "02 · Casas", value: "cat-02" }
+          - { label: "03 · Apartamentos", value: "cat-03" }
+          - { label: "04 · Comercial", value: "cat-04" }
+          - { label: "05 · Multifamiliar", value: "cat-05" }
+          - { label: "06 · Outros", value: "cat-06" }
+      - { label: "Ordem dentro da categoria (1, 2, 3...)", name: "ordem", widget: "number", value_type: "int", default: 1 }
+      - label: "Paleta de cores"
+        name: "paleta"
+        widget: "select"
+        hint: "Escolha o visual do projeto — cada uma é uma combinação de cores já usada no site."
+        options:
+          - { label: "Areia (claro, quente)", value: "paleta-areia" }
+          - { label: "Neblina (claro, esverdeado)", value: "paleta-neblina" }
+          - { label: "Carvão (escuro, quase preto)", value: "paleta-carvao" }
+          - { label: "Pedra (claro, cinza)", value: "paleta-pedra" }
+          - { label: "Nogueira (escuro, marrom)", value: "paleta-nogueira" }
+          - { label: "Osso (claro, bege)", value: "paleta-osso" }
+          - { label: "Marfim (claro, com linha terracota)", value: "paleta-marfim" }
+          - { label: "Cacau (escuro, marrom)", value: "paleta-cacau" }
+          - { label: "Grafite (escuro, azulado, com linha laranja)", value: "paleta-grafite" }
+      - { label: "Localização", name: "local", widget: "string" }
+      - { label: "Foto principal (hero)", name: "hero_imagem", widget: "image" }
+      - { label: "Texto alternativo da foto principal", name: "hero_alt", widget: "string" }
+      - { label: "Legenda da foto principal", name: "hero_legenda", widget: "string", required: false }
+      - { label: "Enquadramento da foto principal (avançado — deixe em branco)", name: "hero_foco", widget: "string", required: false, hint: "Só preencha se a foto principal estiver cortando mal uma pessoa/objeto. Ex.: 'center 85%'." }
+      - { label: "Mostrar linha de destaque colorida", name: "linha_destaque", widget: "boolean", default: false, required: false }
+      - label: "Dados do projeto"
+        name: "dados"
+        widget: "list"
+        summary: "{{label}}: {{valor}}"
+        fields:
+          - { label: "Rótulo (ex.: Tipo, Área, Ano, Status, Escopo)", name: "label", widget: "string" }
+          - { label: "Valor", name: "valor", widget: "string" }
+      - label: "Galeria de fotos"
+        name: "galeria"
+        widget: "list"
+        summary: "{{alt}}"
+        fields:
+          - { label: "Foto", name: "imagem", widget: "image" }
+          - { label: "Texto alternativo", name: "alt", widget: "string" }
+          - label: "Formato na grade"
+            name: "formato"
+            widget: "select"
+            default: "g-half"
+            options:
+              - { label: "Larga", value: "g-wide" }
+              - { label: "Estreita", value: "g-third" }
+              - { label: "Metade", value: "g-half" }
+              - { label: "Alta", value: "g-tall" }
+              - { label: "Preenche", value: "g-fill" }
+      - { label: "Texto do projeto", name: "body", widget: "markdown", buttons: ["bold", "italic"] }
