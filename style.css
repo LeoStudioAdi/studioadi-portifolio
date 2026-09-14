@@ -54,17 +54,8 @@ img { display: block; max-width: 100%; }
   background: rgba(230, 224, 213, 0.96);
 }
 
-/* Quando estamos numa seção dark, a aside vira dark também */
-body.dark-aside .aside {
-  background: rgba(0, 0, 0, 0.7);
-  border-right-color: rgba(255,255,255,0.1);
-}
-body.dark-aside .aside:hover {
-  background: rgba(0, 0, 0, 0.92);
-}
-body.dark-aside .aside,
-body.dark-aside .aside a { color: #E6E0D5; }
-body.dark-aside .marca-svg path { fill: #E6E0D5; }
+/* A barra lateral agora mantém sempre bege com texto preto,
+   não importa a seção visível por trás dela. */
 
 .aside .marca {
   padding: 0 14px 28px;
@@ -79,7 +70,6 @@ body.dark-aside .marca-svg path { fill: #E6E0D5; }
 .aside:hover .marca {
   padding: 0 22px 28px;
 }
-body.dark-aside .aside .marca { border-bottom-color: rgba(255,255,255,0.1); }
 
 .marca-svg { flex-shrink: 0; transition: transform 0.4s; }
 
@@ -96,8 +86,6 @@ body.dark-aside .aside .marca { border-bottom-color: rgba(255,255,255,0.1); }
   height: 22px;
 }
 .aside .marca-img.is-dark { display: none; }
-body.dark-aside .aside .marca-img.is-light { display: none; }
-body.dark-aside .aside .marca-img.is-dark { display: block; }
 
 .marca-text {
   opacity: 0;
@@ -108,7 +96,6 @@ body.dark-aside .aside .marca-img.is-dark { display: block; }
   color: var(--ink-soft);
   line-height: 1.5;
 }
-body.dark-aside .marca-text { color: rgba(230, 224, 213,0.6); }
 .aside:hover .marca-text { opacity: 1; }
 
 .aside-tag {
@@ -122,7 +109,6 @@ body.dark-aside .marca-text { color: rgba(230, 224, 213,0.6); }
   transition: opacity 0.3s 0.05s;
   font-weight: 500;
 }
-body.dark-aside .aside-tag { color: rgba(230, 224, 213,0.5); }
 .aside:hover .aside-tag { opacity: 1; }
 
 .aside-list { list-style: none; flex: 1; }
@@ -141,10 +127,8 @@ body.dark-aside .aside-tag { color: rgba(230, 224, 213,0.5); }
   white-space: nowrap;
   transition: background 0.25s, color 0.25s;
 }
-body.dark-aside .aside a { color: #E6E0D5; }
 
 .aside-list a:hover { background: rgba(0, 0, 0,0.04); }
-body.dark-aside .aside-list a:hover { background: rgba(255,255,255,0.06); }
 
 .aside-num {
   font-family: var(--sora);
@@ -153,7 +137,6 @@ body.dark-aside .aside-list a:hover { background: rgba(255,255,255,0.06); }
   letter-spacing: 0.05em;
   color: var(--ink-soft);
 }
-body.dark-aside .aside-num { color: rgba(230, 224, 213,0.55); }
 
 .aside-name {
   opacity: 0;
@@ -170,7 +153,6 @@ body.dark-aside .aside-num { color: rgba(230, 224, 213,0.55); }
   text-transform: uppercase;
   color: var(--ink-soft);
 }
-body.dark-aside .aside-count { color: rgba(230, 224, 213,0.4); }
 .aside:hover .aside-count { opacity: 1; }
 
 .aside-foot {
@@ -184,10 +166,6 @@ body.dark-aside .aside-count { color: rgba(230, 224, 213,0.4); }
   opacity: 0;
   transition: opacity 0.3s, border-color 0.4s;
   white-space: nowrap;
-}
-body.dark-aside .aside-foot {
-  border-top-color: rgba(255,255,255,0.1);
-  color: rgba(230, 224, 213,0.45);
 }
 .aside:hover .aside-foot { opacity: 1; }
 
