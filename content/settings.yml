@@ -57,7 +57,8 @@ categorias:
     frase_abertura_linha3: em cada **casa**
     nome_indice: Casas
     nome: Casas
-    desc_indice: Residências que conectam arquitetura, contexto e diferentes formas de morar
+    desc_indice: Residências que conectam arquitetura, contexto e diferentes formas
+      de morar.
   - slug: cat-03
     local: " "
     periodo: " "
@@ -66,16 +67,16 @@ categorias:
     frase_abertura_linha3: de **cada m²**
     nome_indice: Apartamentos
     nome: Apartamentos
-    desc_indice: Interiores que traduzem personalidade, dia-a-dia e modos de viver
+    desc_indice: Interiores que traduzem personalidade, dia-a-dia e modos de viver.
   - slug: cat-04
-    local: São Paulo · BR
-    periodo: 2020 — 2026
-    frase_abertura_linha1: Espaços que
-    frase_abertura_linha2: "**recebem**"
-    frase_abertura_linha3: bem.
+    local: " "
+    periodo: " "
+    frase_abertura_linha1: " "
+    frase_abertura_linha2: " "
+    frase_abertura_linha3: " "
     nome_indice: Comercial
     nome: Comercial
-    desc_indice: Espaços corporativos, hospitalidade e varejo — atmosfera entregue na chave.
+    desc_indice: Espaços corporativos, hospitalidade e varejo.
   - slug: cat-05
     local: São Paulo · BR
     periodo: 2024 — 2026
