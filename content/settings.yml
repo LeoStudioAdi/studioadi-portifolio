@@ -87,11 +87,11 @@ categorias:
     nome: Edifícios
     desc_indice: Projetos com identidade, escala e soluções para grandes empreendimentos.
   - slug: cat-06
-    local: São Paulo · BR
-    periodo: 2020 — 2026
+    local: " "
+    periodo: " "
     frase_abertura_linha1: Projetos que
     frase_abertura_linha2: não cabem em
-    frase_abertura_linha3: "**uma categoria.**"
+    frase_abertura_linha3: "**uma categoria**"
     nome_indice: Outros
     nome: Outros
-    desc_indice: Projetos de tipologia singular — indústria, audiovisual, treinamento.
+    desc_indice: Projetos singulares para diferentes necessidades e contextos.
