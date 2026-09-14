@@ -22,8 +22,10 @@ const DIST_DIR = path.join(ROOT, 'dist');
 // 1) Um parser de YAML "suficiente" — sem dependências externas.
 //    Entende exatamente o que o Decap CMS (o painel /admin) escreve:
 //    strings, números, booleanos, listas de objetos e mapas aninhados,
-//    com indentação de 2 espaços. Não é um parser de YAML completo de
-//    propósito geral — é o bastante para o conteúdo deste site.
+//    com indentação de 2 espaços — incluindo textos longos que o painel
+//    quebra em mais de uma linha (escalar "dobrado" do YAML). Não é um
+//    parser de YAML completo de propósito geral — é o bastante para o
+//    conteúdo deste site.
 // =====================================================================
 
 function stripQuotes(s) {
@@ -90,8 +92,19 @@ function parseBlock(lines, start, minIndent) {
         arr.push(obj);
         i = next;
       } else {
-        arr.push(parseScalar(rest));
+        // item de lista simples (string) — também pode vir "dobrado" em
+        // mais de uma linha se for um texto longo.
+        let val = rest;
         i++;
+        while (i < lines.length) {
+          const contLine = lines[i];
+          if (contLine.trim() === '') break;
+          const contInd = indentOf(contLine);
+          if (contInd <= firstIndent) break;
+          val += ' ' + contLine.trim();
+          i++;
+        }
+        arr.push(parseScalar(val));
       }
     }
     return [arr, i];
@@ -129,8 +142,22 @@ function parseBlock(lines, start, minIndent) {
       obj[key] = child === null ? '' : child;
       i = next;
     } else {
-      obj[key] = parseScalar(valueRaw);
+      // Valor na mesma linha da chave — mas se for um texto longo, o
+      // painel de edição (Decap CMS) pode "dobrar" ele em mais de uma
+      // linha, com as linhas seguintes mais indentadas que esta chave.
+      // Essas linhas são continuação do MESMO valor, não uma estrutura
+      // nova — junta tudo de volta em uma única string.
+      let val = valueRaw;
       i++;
+      while (i < lines.length) {
+        const contLine = lines[i];
+        if (contLine.trim() === '') break;
+        const contInd = indentOf(contLine);
+        if (contInd <= ind) break;
+        val += ' ' + contLine.trim();
+        i++;
+      }
+      obj[key] = parseScalar(val);
     }
   }
   return [obj, i];
