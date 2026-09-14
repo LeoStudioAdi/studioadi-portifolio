@@ -62,8 +62,8 @@ categorias:
     local: " "
     periodo: " "
     frase_abertura_linha1: o melhor
-    frase_abertura_linha2: aproveitamento de
-    frase_abertura_linha3: "**cada m²**"
+    frase_abertura_linha2: aproveitamento
+    frase_abertura_linha3: de **cada m²**
     nome_indice: Apartamentos
     nome: Apartamentos
     desc_indice: Interiores que traduzem personalidade, dia-a-dia e modos de viver
