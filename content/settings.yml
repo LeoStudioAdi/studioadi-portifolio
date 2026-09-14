@@ -50,15 +50,14 @@ categorias:
     nome: Arquitetura de experiência
     desc_indice: Quando a paisagem conduz, a arquitetura transforma o lugar em experiência.
   - slug: cat-02
-    local: SP · RJ · MG
-    periodo: 2022 — 2026
-    frase_abertura_linha1: Cada cliente,
-    frase_abertura_linha2: uma **casa**
-    frase_abertura_linha3: que só é dele.
+    local: " "
+    periodo: " "
+    frase_abertura_linha1: Funcionalidade
+    frase_abertura_linha2: e identidade
+    frase_abertura_linha3: em cada projeto
     nome_indice: Casas
     nome: Casas
-    desc_indice: Casas urbanas e em paisagens próximas — onde a presença da cidade
-      ainda chega.
+    desc_indice: Residências que conectam arquitetura, contexto e diferentes formas de morar
   - slug: cat-03
     local: São Paulo · Guarujá
     periodo: 2019 — 2025
