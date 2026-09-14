@@ -59,15 +59,14 @@ categorias:
     nome: Casas
     desc_indice: Residências que conectam arquitetura, contexto e diferentes formas de morar
   - slug: cat-03
-    local: São Paulo · Guarujá
-    periodo: 2019 — 2025
-    frase_abertura_linha1: Reformar é
-    frase_abertura_linha2: "**recomeçar**"
-    frase_abertura_linha3: com o que existe.
+    local: " "
+    periodo: " "
+    frase_abertura_linha1: Aproveitando ao
+    frase_abertura_linha2: máximo
+    frase_abertura_linha3: "**cada m²**"
     nome_indice: Apartamentos
     nome: Apartamentos
-    desc_indice: Reformas e projetos integrais para clientes que entendem cada
-      detalhe da própria casa.
+    desc_indice: Interiores que traduzem personalidade, dia-a-dia e modos de viver
   - slug: cat-04
     local: São Paulo · BR
     periodo: 2020 — 2026
