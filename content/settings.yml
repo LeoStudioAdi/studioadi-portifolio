@@ -1,130 +1,99 @@
-# =====================================================================
-# Studio ADI — conteúdo geral do site (capa, manifesto, índice, contato)
-# Edite este arquivo pelo painel /admin depois de publicar o site.
-#
-# Convenção usada em todos os textos deste arquivo:
-#   - "**palavra**" fica destacada (cor de acento / negrito), igual ao
-#     site original.
-#   - uma quebra de linha dentro do texto = uma quebra de linha visual
-#     (como no site original, que tem títulos grandes em várias linhas).
-# =====================================================================
-
-site_title: "Studio ADI® · Caderno R10"
-
+site_title: Studio ADI® · Caderno R10
 marca:
-  nome: "Studio ADI**®**"
-  subtitulo: "Caderno R10"
-  logo_claro: "img/logos/logo-07-preto.png"
-  logo_escuro: "img/logos/logo-07-branco.png"
-
+  nome: Studio ADI**®**
+  subtitulo: "** **"
+  logo_claro: img/logos/logo-07-preto.png
+  logo_escuro: img/logos/logo-07-branco.png
 rodape_menu:
-  cidade: "São Paulo · Brasil"
-  email: "contato@studioadi.com.br"
-
+  cidade: São Paulo · Brasil
+  email: contato@studioadi.com.br
 capa:
-  info_linha1: "Caderno · R10"
-  info_linha2: "2020 — 2026"
-  info_linha3: "São Paulo · BR"
-  descritiva_l1: "São Paulo"
-  descritiva_l2: "Arquitetura · Design"
-  descritiva_l3: "Brasil"
-  descricao: "Arquitetura que pertence à terra"
-
+  info_linha1: Caderno · R10
+  info_linha2: 2020 — 2026
+  info_linha3: São Paulo · BR
+  descritiva_l1: São Paulo
+  descritiva_l2: Arquitetura · Design
+  descritiva_l3: Brasil
+  descricao: Arquitetura que pertence à terra
 manifesto:
-  frase_linha1: "Nenhum"
-  frase_linha2: "projeto é"
-  frase_linha3: "como **o outro.**"
-  subtitulo: "Esta é a única regra do studio."
-  marca_linha1: "Studio ADI®"
-  marca_linha2: "desde 2019"
-
+  frase_linha1: Nenhum
+  frase_linha2: projeto é
+  frase_linha3: como **o outro.**
+  subtitulo: Esta é a única regra do studio.
+  marca_linha1: Studio ADI®
+  marca_linha2: desde 2019
 indice:
-  titulo_linha1: "Um caderno"
-  titulo_linha2: "em"
+  titulo_linha1: Um caderno
+  titulo_linha2: em
   titulo_linha3: "**seis tempos.**"
-  intro: "Projetos selecionados, agrupados por aquilo que os aproxima — não pelo que os iguala."
-
+  intro: Projetos selecionados, agrupados por aquilo que os aproxima — não pelo
+    que os iguala.
 contato:
-  tag: "— Próximo passo"
-  titulo_linha1: "Comece"
-  titulo_linha2: "**aqui.**"
-  email: "contato@studioadi.com.br"
+  logo_final: img/logos/logo-07-branco.png
   instagram_label: "@studioadi"
   instagram_link: "#"
-  telefone_label: "+55 11 4103.7103"
-  telefone_link: "tel:+551141037103"
-  rodape_linha1: "Studio ADI® · Arquitetura e Design"
-  rodape_linha2: "São Paulo · Brasil"
-  logo_final: "img/logos/logo-07-branco.png"
-
-# =====================================================================
-# Categorias — a ordem aqui define a ordem no menu, no índice e na
-# ordem em que aparecem na página. O número de projetos de cada
-# categoria é calculado automaticamente a partir dos projetos
-# cadastrados (não precisa editar contagem em lugar nenhum).
-#
-# "comercial" e "outros" não têm nenhum projeto cadastrado ainda — por
-# isso, como no site original, elas aparecem no menu e no índice, mas
-# a "página de abertura" grande delas só é gerada quando o primeiro
-# projeto da categoria for cadastrado.
-# =====================================================================
+  titulo_linha1: Comece
+  titulo_linha2: "**aqui.**"
+  telefone_link: tel:+551141037103
+  rodape_linha1: Studio ADI® · Arquitetura e Design
+  rodape_linha2: São Paulo · Brasil
+  tag: — Próximo passo
+  email: contato@studioadi.com.br
+  telefone_label: +55 11 4103.7103
 categorias:
   - slug: cat-01
-    nome: "Habitações remotas"
-    nome_indice: "**Habitações** remotas"
-    desc_indice: "Casas pensadas para lugares onde a paisagem manda mais que a cidade."
-    frase_abertura_linha1: "Onde a"
-    frase_abertura_linha2: "paisagem"
+    local: Sul de Minas · SP
+    periodo: 2020 — 2026
+    frase_abertura_linha1: Onde a
+    frase_abertura_linha2: paisagem
     frase_abertura_linha3: "**manda mais.**"
-    periodo: "2020 — 2026"
-    local: "Sul de Minas · SP"
-
+    nome_indice: "**Habitações** remotas"
+    nome: Habitações remotas
+    desc_indice: Casas pensadas para lugares onde a paisagem manda mais que a cidade.
   - slug: cat-02
-    nome: "Casas"
-    nome_indice: "Casas"
-    desc_indice: "Casas urbanas e em paisagens próximas — onde a presença da cidade ainda chega."
-    frase_abertura_linha1: "Cada cliente,"
-    frase_abertura_linha2: "uma **casa**"
-    frase_abertura_linha3: "que só é dele."
-    periodo: "2022 — 2026"
-    local: "SP · RJ · MG"
-
+    local: SP · RJ · MG
+    periodo: 2022 — 2026
+    frase_abertura_linha1: Cada cliente,
+    frase_abertura_linha2: uma **casa**
+    frase_abertura_linha3: que só é dele.
+    nome_indice: Casas
+    nome: Casas
+    desc_indice: Casas urbanas e em paisagens próximas — onde a presença da cidade
+      ainda chega.
   - slug: cat-03
-    nome: "Apartamentos"
-    nome_indice: "Apartamentos"
-    desc_indice: "Reformas e projetos integrais para clientes que entendem cada detalhe da própria casa."
-    frase_abertura_linha1: "Reformar é"
+    local: São Paulo · Guarujá
+    periodo: 2019 — 2025
+    frase_abertura_linha1: Reformar é
     frase_abertura_linha2: "**recomeçar**"
-    frase_abertura_linha3: "com o que existe."
-    periodo: "2019 — 2025"
-    local: "São Paulo · Guarujá"
-
+    frase_abertura_linha3: com o que existe.
+    nome_indice: Apartamentos
+    nome: Apartamentos
+    desc_indice: Reformas e projetos integrais para clientes que entendem cada
+      detalhe da própria casa.
   - slug: cat-04
-    nome: "Comercial"
-    nome_indice: "Comercial"
-    desc_indice: "Espaços corporativos, hospitalidade e varejo — atmosfera entregue na chave."
-    frase_abertura_linha1: "Espaços que"
+    local: São Paulo · BR
+    periodo: 2020 — 2026
+    frase_abertura_linha1: Espaços que
     frase_abertura_linha2: "**recebem**"
-    frase_abertura_linha3: "bem."
-    periodo: "2020 — 2026"
-    local: "São Paulo · BR"
-
+    frase_abertura_linha3: bem.
+    nome_indice: Comercial
+    nome: Comercial
+    desc_indice: Espaços corporativos, hospitalidade e varejo — atmosfera entregue na chave.
   - slug: cat-05
-    nome: "Multifamiliar"
-    nome_indice: "Multifamiliar"
-    desc_indice: "Edifícios inteiros, escala de incorporação, gestão e desenho."
-    frase_abertura_linha1: "Edifício"
-    frase_abertura_linha2: "que assina"
+    local: São Paulo · BR
+    periodo: 2024 — 2026
+    frase_abertura_linha1: Edifício
+    frase_abertura_linha2: que assina
     frase_abertura_linha3: "**uma esquina.**"
-    periodo: "2024 — 2026"
-    local: "São Paulo · BR"
-
+    nome_indice: Multifamiliar
+    nome: Multifamiliar
+    desc_indice: Edifícios inteiros, escala de incorporação, gestão e desenho.
   - slug: cat-06
-    nome: "Outros"
-    nome_indice: "Outros"
-    desc_indice: "Projetos de tipologia singular — indústria, audiovisual, treinamento."
-    frase_abertura_linha1: "Projetos que"
-    frase_abertura_linha2: "não cabem em"
+    local: São Paulo · BR
+    periodo: 2020 — 2026
+    frase_abertura_linha1: Projetos que
+    frase_abertura_linha2: não cabem em
     frase_abertura_linha3: "**uma categoria.**"
-    periodo: "2020 — 2026"
-    local: "São Paulo · BR"
+    nome_indice: Outros
+    nome: Outros
+    desc_indice: Projetos de tipologia singular — indústria, audiovisual, treinamento.
