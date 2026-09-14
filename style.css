@@ -235,8 +235,7 @@ body.dark-aside .aside-foot {
   overflow: hidden;
 }
 
-/* GRAIN sutil em cima do fundo (mesma textura que aparece nas aberturas) */
-.capa::before,
+/* GRAIN sutil em cima do fundo (mesma textura que aparece nas aberturas de categoria) */
 .cat-abrir::before {
   content: "";
   position: absolute;
