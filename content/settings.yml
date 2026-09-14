@@ -23,11 +23,10 @@ manifesto:
   marca_linha1: Studio ADI®
   marca_linha2: desde 2018
 indice:
-  titulo_linha1: Cada projeto
-  titulo_linha2: com
-  titulo_linha3: "**sua essência.**"
-  intro: Projetos selecionados, agrupados por aquilo que os aproxima — não pelo
-    que os iguala.
+  titulo_linha1: Seu projeto,
+  titulo_linha2: nossa
+  titulo_linha3: "**história.**"
+  intro: " "
 contato:
   logo_final: img/logos/logo-07-branco.png
   instagram_label: "@studioadi_"
