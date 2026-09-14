@@ -78,14 +78,14 @@ categorias:
     nome: Comercial
     desc_indice: Espaços corporativos, hospitalidade e varejo.
   - slug: cat-05
-    local: São Paulo · BR
-    periodo: 2024 — 2026
-    frase_abertura_linha1: Edifício
-    frase_abertura_linha2: que assina
-    frase_abertura_linha3: "**uma esquina.**"
+    local: " "
+    periodo: " "
+    frase_abertura_linha1: Presença
+    frase_abertura_linha2: que **transforma**
+    frase_abertura_linha3: o entorno
     nome_indice: Edifícios
     nome: Edifícios
-    desc_indice: Edifícios inteiros, escala de incorporação, gestão e desenho.
+    desc_indice: Projetos com identidade, escala e soluções para grandes empreendimentos.
   - slug: cat-06
     local: São Paulo · BR
     periodo: 2020 — 2026
