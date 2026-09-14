@@ -1,4 +1,3 @@
-
 :root {
   --sora: 'Sora', system-ui, sans-serif;
   /* "serif" agora é apenas Sora em peso fino — nome mantido por compatibilidade com classes existentes */
@@ -224,7 +223,7 @@ body.dark-aside .aside-foot {
 
 .capa {
   min-height: 100vh;
-  background: #000000;
+  background: #41886E;
   color: #E6E0D5;
   --ink-soft-page: rgba(230, 224, 213,0.6);
   --accent-page: #BF663D;
@@ -236,8 +235,7 @@ body.dark-aside .aside-foot {
   overflow: hidden;
 }
 
-/* GRAIN sutil em cima do fundo (mesma textura que aparece nas aberturas) */
-.capa::before,
+/* GRAIN sutil em cima do fundo (mesma textura que aparece nas aberturas de categoria) */
 .cat-abrir::before {
   content: "";
   position: absolute;
@@ -375,7 +373,7 @@ body.dark-aside .aside-foot {
 /* ===================================================== */
 .manifesto {
   min-height: 100vh;
-  background: #000000;
+  background: #41886E;
   color: #E6E0D5;
   --ink: #E6E0D5;
   --ink-soft: rgba(230, 224, 213,0.55);
