@@ -41,14 +41,14 @@ contato:
   telefone_label: (11) 96595-4372
 categorias:
   - slug: cat-01
-    local: Sul de Minas · SP
-    periodo: 2020 — 2026
-    frase_abertura_linha1: Onde a
-    frase_abertura_linha2: paisagem
-    frase_abertura_linha3: "**manda mais.**"
+    local: " "
+    periodo: " "
+    frase_abertura_linha1: "Arquitetura "
+    frase_abertura_linha2: integrada a
+    frase_abertura_linha3: "**paisagem**"
     nome_indice: Arquitetura de experiência
     nome: Arquitetura de experiência
-    desc_indice: Casas pensadas para lugares onde a paisagem manda mais que a cidade.
+    desc_indice: Quando a paisagem conduz, a arquitetura transforma o lugar em experiência.
   - slug: cat-02
     local: SP · RJ · MG
     periodo: 2022 — 2026
