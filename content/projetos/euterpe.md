@@ -22,7 +22,7 @@ dados:
 galeria:
   - imagem: img/uploads/euterpe3.jpg
     alt: Euterpe · vista entre os dois volumes brancos
-    formato: g-tall
+    formato: g-wide
   - imagem: img/uploads/euterpe5.jpg
     alt: Euterpe · banheira
     formato: g-third
