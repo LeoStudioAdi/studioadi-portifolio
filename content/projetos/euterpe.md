@@ -29,7 +29,7 @@ galeria:
   - imagem: img/uploads/euterpe6.jpg
     alt: Euterpe · vista do quarto
     formato: g-half
-  - imagem: img/uploads/euterpe8.jpg
+  - imagem: img/uploads/musa01.png
     alt: Euterpe · piscina e vista
     formato: g-half
 ---
