@@ -4,10 +4,10 @@ categoria: cat-01
 ordem: 3
 paleta: paleta-carvao
 local: " "
-hero_imagem: img/uploads/templo1.jpg
-hero_alt: Casa Templo · noite
+hero_imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43-2-.jpeg
+hero_alt: Casa Templo · dia
 hero_legenda: Noturna · luz quente sob a serra
-hero_foco: center 85%
+hero_foco: ""
 dados:
   - label: Tipo
     valor: Arquitetura de experiência · Airbnb
@@ -20,13 +20,13 @@ dados:
   - label: Perfil
     valor: "@templo.casa"
 galeria:
-  - imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43-2-.jpeg
+  - imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43-1-.jpeg
     alt: Templo · contra a serra
     formato: g-wide
   - imagem: img/uploads/18308221651249169.jpg
     alt: Templo · vertical
     formato: g-third
-  - imagem: img/uploads/18111012292634245.jpg
+  - imagem: img/uploads/templo1.jpg
     alt: Templo · vista aérea
     formato: g-half
   - imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43.jpeg
