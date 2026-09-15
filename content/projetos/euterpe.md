@@ -7,6 +7,7 @@ local: " "
 hero_imagem: img/uploads/euterpe2.jpg
 hero_alt: Euterpe · deck e paisagem
 hero_legenda: Vista ds dois volumes brancos em meio a paisagem
+linha_destaque: false
 dados:
   - label: Tipo
     valor: Arquitetura de experiência · Airbnb
@@ -16,16 +17,16 @@ dados:
     valor: Redenção da Serra · São Paulo
   - label: Ano
     valor: "2022"
-  - label: " "
+  - label: Perfil
     valor: "@musa.casa"
 galeria:
   - imagem: img/uploads/euterpe3.jpg
     alt: Euterpe · vista entre os dois volumes brancos
-    formato: g-fill
+    formato: g-tall
   - imagem: img/uploads/euterpe5.jpg
     alt: Euterpe · banheira
-    formato: g-half
-  - imagem: img/uploads/euterpe4.jpg
+    formato: g-third
+  - imagem: img/uploads/euterpe8.jpg
     alt: Euterpe · vista do quarto
     formato: g-half
   - imagem: img/uploads/euterpe6.jpg
