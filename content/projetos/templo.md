@@ -4,9 +4,9 @@ categoria: cat-01
 ordem: 3
 paleta: paleta-carvao
 local: " "
-hero_imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43.jpeg
+hero_imagem: img/uploads/templo2.jpeg
 hero_alt: Casa Templo · dia
-hero_legenda: Noturna · luz quente sob a serra
+hero_legenda: Luz quente sob a serra
 hero_foco: ""
 dados:
   - label: Tipo
