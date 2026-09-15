@@ -35,4 +35,4 @@ galeria:
 ---
 A casa se abre para a paisagem em um volume horizontal, suspenso sobre o declive natural do terreno. Amplas superfícies de vidro integram os ambientes e o entorno, enquanto a madeira e a pedra conferem textura e acolhimento aos interiores. 
 
-Brises móveis filtram a luz e resguardam a intimidade, e o terraço prolonga os espaços de convivência ao ar livre, **convidando à contemplação.**
+Brises móveis filtram a luz e resguardam a intimidade, e o terraço prolonga os espaços de convivência ao ar livre, *convidando à contemplação.*
