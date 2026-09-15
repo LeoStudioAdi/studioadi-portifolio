@@ -4,7 +4,7 @@ categoria: cat-01
 ordem: 3
 paleta: paleta-carvao
 local: " "
-hero_imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43-2-.jpeg
+hero_imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43.jpeg
 hero_alt: Casa Templo · dia
 hero_legenda: Noturna · luz quente sob a serra
 hero_foco: ""
@@ -29,7 +29,7 @@ galeria:
   - imagem: img/uploads/templo1.jpg
     alt: Templo · vista aérea
     formato: g-half
-  - imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43.jpeg
+  - imagem: img/uploads/whatsapp-image-2026-09-15-at-14.30.43-2-.jpeg
     alt: Templo · noite
     formato: g-half
 ---
