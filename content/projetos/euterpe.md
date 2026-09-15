@@ -26,10 +26,10 @@ galeria:
   - imagem: img/uploads/euterpe5.jpg
     alt: Euterpe · banheira
     formato: g-third
-  - imagem: img/uploads/euterpe8.jpg
+  - imagem: img/uploads/euterpe6.jpg
     alt: Euterpe · vista do quarto
     formato: g-half
-  - imagem: img/uploads/euterpe6.jpg
+  - imagem: img/uploads/euterpe8.jpg
     alt: Euterpe · piscina e vista
     formato: g-half
 ---
