@@ -3,34 +3,34 @@ titulo: Musa **Euterpe**
 categoria: cat-01
 ordem: 2
 paleta: paleta-neblina
-local: Redenção · São Paulo
-hero_imagem: img/projetos/euterpe-02.webp
-hero_alt: Euterpe · entre os volumes
-hero_legenda: Vista entre os dois volumes brancos
+local: " "
+hero_imagem: img/uploads/euterpe2.jpg
+hero_alt: Euterpe · deck e paisagem
+hero_legenda: Vista ds dois volumes brancos em meio a paisagem
 dados:
-- label: Tipo
-  valor: Habitação remota · Airbnb
-- label: Área
-  valor: 85 m²
-- label: Ano
-  valor: 2022 · entregue
-- label: Escopo
-  valor: Projeto + execução
-- label: Foto
-  valor: —
+  - label: Tipo
+    valor: Arquitetura de experiência · Airbnb
+  - label: Área
+    valor: 85 m²
+  - label: Localização
+    valor: Redenção da Serra · São Paulo
+  - label: Ano
+    valor: "2022"
+  - label: " "
+    valor: "@musa.casa"
 galeria:
-- imagem: img/projetos/euterpe-01.webp
-  alt: Euterpe · deck e palmeira
-  formato: g-fill
-- imagem: img/projetos/euterpe-03.webp
-  alt: Euterpe · suíte com cortina
-  formato: g-tall
-- imagem: img/projetos/euterpe-04.webp
-  alt: Euterpe · vista do quarto
-  formato: g-half
-- imagem: img/projetos/euterpe-02.webp
-  alt: Euterpe · piscina e vista
-  formato: g-half
+  - imagem: img/uploads/euterpe3.jpg
+    alt: Euterpe · vista entre os dois volumes brancos
+    formato: g-fill
+  - imagem: img/uploads/euterpe5.jpg
+    alt: Euterpe · banheira
+    formato: g-half
+  - imagem: img/uploads/euterpe4.jpg
+    alt: Euterpe · vista do quarto
+    formato: g-half
+  - imagem: img/uploads/euterpe6.jpg
+    alt: Euterpe · piscina e vista
+    formato: g-half
 ---
 
 Dois volumes brancos sobre o vale formam a casa — um para descansar, outro para receber. Entre eles, o deck que se abre ao lago e à paisagem.
