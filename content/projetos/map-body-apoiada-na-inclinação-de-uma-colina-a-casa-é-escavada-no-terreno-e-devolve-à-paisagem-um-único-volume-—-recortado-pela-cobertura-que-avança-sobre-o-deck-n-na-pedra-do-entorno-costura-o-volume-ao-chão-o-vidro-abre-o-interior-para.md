@@ -12,7 +12,7 @@ dados:
   - valor: Arquitetura de experiência · Airbnb
     label: Tipo
   - label: Área
-    valor: 85 m²
+    valor: 75 m²
   - label: Localização
     valor: Redenção da Serra · São Paulo
   - label: Ano
