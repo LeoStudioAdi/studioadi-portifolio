@@ -6,7 +6,7 @@ paleta: paleta-neblina
 local: " "
 hero_imagem: img/uploads/05-sala.png
 hero_alt: " "
-hero_legenda: " "
+hero_legenda: " Brutalismo em 3 blocos"
 linha_destaque: false
 dados:
   - label: Tipo
