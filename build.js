@@ -22,10 +22,8 @@ const DIST_DIR = path.join(ROOT, 'dist');
 // 1) Um parser de YAML "suficiente" — sem dependências externas.
 //    Entende exatamente o que o Decap CMS (o painel /admin) escreve:
 //    strings, números, booleanos, listas de objetos e mapas aninhados,
-//    com indentação de 2 espaços — incluindo textos longos que o painel
-//    quebra em mais de uma linha (escalar "dobrado" do YAML). Não é um
-//    parser de YAML completo de propósito geral — é o bastante para o
-//    conteúdo deste site.
+//    com indentação de 2 espaços. Não é um parser de YAML completo de
+//    propósito geral — é o bastante para o conteúdo deste site.
 // =====================================================================
 
 function stripQuotes(s) {
@@ -92,19 +90,8 @@ function parseBlock(lines, start, minIndent) {
         arr.push(obj);
         i = next;
       } else {
-        // item de lista simples (string) — também pode vir "dobrado" em
-        // mais de uma linha se for um texto longo.
-        let val = rest;
+        arr.push(parseScalar(rest));
         i++;
-        while (i < lines.length) {
-          const contLine = lines[i];
-          if (contLine.trim() === '') break;
-          const contInd = indentOf(contLine);
-          if (contInd <= firstIndent) break;
-          val += ' ' + contLine.trim();
-          i++;
-        }
-        arr.push(parseScalar(val));
       }
     }
     return [arr, i];
@@ -142,22 +129,8 @@ function parseBlock(lines, start, minIndent) {
       obj[key] = child === null ? '' : child;
       i = next;
     } else {
-      // Valor na mesma linha da chave — mas se for um texto longo, o
-      // painel de edição (Decap CMS) pode "dobrar" ele em mais de uma
-      // linha, com as linhas seguintes mais indentadas que esta chave.
-      // Essas linhas são continuação do MESMO valor, não uma estrutura
-      // nova — junta tudo de volta em uma única string.
-      let val = valueRaw;
+      obj[key] = parseScalar(valueRaw);
       i++;
-      while (i < lines.length) {
-        const contLine = lines[i];
-        if (contLine.trim() === '') break;
-        const contInd = indentOf(contLine);
-        if (contInd <= ind) break;
-        val += ' ' + contLine.trim();
-        i++;
-      }
-      obj[key] = parseScalar(val);
     }
   }
   return [obj, i];
@@ -258,17 +231,27 @@ function isDarkHex(hex) {
 }
 
 // =====================================================================
-// 4) Números por extenso (para "Sete projetos", como no site original)
+// 4) Contagem de projetos exibida (menu lateral, índice, abertura de
+//    categoria). Por padrão é a quantidade REAL de projetos publicados
+//    no site. Mas cada categoria pode ter um campo "projetos_realizados"
+//    (texto livre, tipo "120+") pelo painel — quando preenchido, esse
+//    texto é o que aparece nos 3 lugares, no lugar da contagem real.
+//    Isso serve pra mostrar o total de projetos que o studio já fez na
+//    vida real, que pode ser bem maior do que o que está publicado
+//    no site.
 // =====================================================================
 
-const NUM_EXTENSO = [
-  'Zero', 'Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito',
-  'Nove', 'Dez', 'Onze', 'Doze', 'Treze', 'Catorze', 'Quinze', 'Dezesseis',
-  'Dezessete', 'Dezoito', 'Dezenove', 'Vinte',
-];
-function numeroExtenso(n) {
-  if (n >= 0 && n < NUM_EXTENSO.length) return NUM_EXTENSO[n];
-  return String(n);
+// Valor "cru" (sem sufixo) — usado no badge pequeno do menu lateral.
+function contagemBadge(cat, countReal) {
+  const manual = (cat.projetos_realizados || '').toString().trim();
+  return manual || String(countReal).padStart(2, '0');
+}
+
+// Valor com "projetos" no final — usado no índice e na abertura de categoria.
+function contagemLabel(cat, countReal) {
+  const manual = (cat.projetos_realizados || '').toString().trim();
+  if (manual) return `${manual} projetos`;
+  return `${String(countReal).padStart(2, '0')} projeto${countReal === 1 ? '' : 's'}`;
 }
 
 // =====================================================================
@@ -340,8 +323,7 @@ ${(p.galeria || []).map(renderGaleriaItem).join('\n')}
 
 function renderCategoriaAbertura(cat, projetos, paginaNum) {
   const count = projetos.length;
-  const badge = String(count).padStart(2, '0');
-  const extenso = `${numeroExtenso(count)} projeto${count === 1 ? '' : 's'}`;
+  const label = contagemLabel(cat, count);
   return `
   <section class="cat-abrir ${escapeHtml(cat.slug)}" id="${escapeHtml(cat.slug)}">
     <div class="cat-abrir-top">
@@ -350,7 +332,7 @@ function renderCategoriaAbertura(cat, projetos, paginaNum) {
         <div class="cat-abrir-num">— ${cat.slug.replace('cat-', '')} / ${escapeHtml(cat.nome)}</div>
       </div>
       <div class="cat-abrir-info">
-        ${escapeHtml(extenso)}<br/>
+        ${escapeHtml(label)}<br/>
         ${escapeHtml(cat.periodo)}<br/>
         ${escapeHtml(cat.local)}
       </div>
@@ -361,7 +343,7 @@ function renderCategoriaAbertura(cat, projetos, paginaNum) {
       </h2>
     </div>
     <div class="cat-abrir-foot">
-      <div class="cat-abrir-foot-titulo">${escapeHtml(cat.nome)} · ${badge} projeto${count === 1 ? '' : 's'}</div>
+      <div class="cat-abrir-foot-titulo">${escapeHtml(cat.nome)} · ${escapeHtml(label)}</div>
       <div class="cat-abrir-foot-pag">— ${String(paginaNum).padStart(2, '0')}</div>
     </div>
   </section>`;
@@ -372,7 +354,7 @@ function renderAsideItem(cat, count) {
         <a href="#${escapeHtml(cat.slug)}">
           <span class="aside-num">${cat.slug.replace('cat-', '')}</span>
           <span class="aside-name">${escapeHtml(cat.nome)}</span>
-          <span class="aside-count">${String(count).padStart(2, '0')}</span>
+          <span class="aside-count">${escapeHtml(contagemBadge(cat, count))}</span>
         </a>
       </li>`;
 }
@@ -382,7 +364,7 @@ function renderIndiceItem(cat, count) {
       <span class="num">${cat.slug.replace('cat-', '')}</span>
       <span class="nome">${accent(cat.nome_indice)}</span>
       <span class="desc">${escapeHtml(cat.desc_indice)}</span>
-      <span class="count">${String(count).padStart(2, '0')} projeto${count === 1 ? '' : 's'}</span>
+      <span class="count">${escapeHtml(contagemLabel(cat, count))}</span>
     </a>`;
 }
 
