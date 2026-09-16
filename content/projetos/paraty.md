@@ -6,12 +6,12 @@ paleta: paleta-cacau
 local: " "
 hero_imagem: img/uploads/paraty-2-.png
 hero_alt: Casa Paraty · vista aérea
-hero_legenda: Casa apoiada na encosta · vista aérea
+hero_legenda: Casa apoiada sobre as rochas
 dados:
   - label: Tipo
     valor: Casa · praia
   - label: Área
-    valor: 850 m² (Área construída)
+    valor: 850 m² (Área total construída)
   - label: Localização
     valor: Paraty · Rio de Janeiro
   - label: Ano
