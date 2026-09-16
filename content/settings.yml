@@ -31,12 +31,12 @@ contato:
   logo_final: img/logos/logo-07-branco.png
   instagram_label: "@studioadi_"
   instagram_link: https://www.instagram.com/studioadi_
-  titulo_linha1: Entre em
-  titulo_linha2: "**contato**"
+  titulo_linha1: " "
+  titulo_linha2: " "
   telefone_link: tel:+5511965954372
   rodape_linha1: Studio ADI® · Arquitetura e Design
   rodape_linha2: São Paulo · Brasil
-  tag: — Próximo passo
+  tag: " "
   email: contato@studioadi.com.br
   telefone_label: (11) 96595-4372
 categorias:
