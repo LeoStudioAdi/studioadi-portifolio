@@ -10,7 +10,7 @@ hero_legenda: " Brutalismo em 3 blocos"
 linha_destaque: false
 dados:
   - label: Tipo
-    valor: Casa
+    valor: Casa em condomínio
   - label: Área
     valor: 524 m²
   - label: Localização
