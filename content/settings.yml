@@ -31,16 +31,16 @@ contato:
   logo_final: img/logos/logo-07-branco.png
   instagram_label: "@studioadi_"
   instagram_link: https://www.instagram.com/studioadi_
-  titulo_linha1: " "
-  titulo_linha2: " "
+  titulo_linha1: Seu projeto,
+  titulo_linha2: " nossa próxima **história**:"
   telefone_link: tel:+5511965954372
   rodape_linha1: Studio ADI® · Arquitetura e Design
   rodape_linha2: São Paulo · Brasil
-  tag: " "
+  tag: "Nosso contato "
   email: contato@studioadi.com.br
   telefone_label: (11) 96595-4372
 categorias:
-  - projetos_realizados: "34"
+  - projetos_realizados: "8"
     slug: cat-01
     local: " "
     periodo: " "
@@ -50,7 +50,7 @@ categorias:
     nome_indice: Arquitetura de experiência
     nome: Arquitetura de experiência
     desc_indice: Quando a paisagem conduz, a arquitetura transforma o lugar em experiência.
-  - projetos_realizados: "34"
+  - projetos_realizados: "26"
     slug: cat-02
     local: " "
     periodo: " "
