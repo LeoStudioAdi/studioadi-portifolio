@@ -10,7 +10,7 @@ hero_legenda: " Living integrado · paineis em madeira"
 linha_destaque: true
 dados:
   - label: Tipo
-    valor: " Apartamento · alto padrão"
+    valor: " Apartamento"
   - label: Área
     valor: 235 m²
   - label: Localização
