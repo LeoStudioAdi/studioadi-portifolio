@@ -40,7 +40,8 @@ contato:
   email: contato@studioadi.com.br
   telefone_label: (11) 96595-4372
 categorias:
-  - slug: cat-01
+  - projetos_realizados: "34"
+    slug: cat-01
     local: " "
     periodo: " "
     frase_abertura_linha1: "Arquitetura "
@@ -49,7 +50,8 @@ categorias:
     nome_indice: Arquitetura de experiência
     nome: Arquitetura de experiência
     desc_indice: Quando a paisagem conduz, a arquitetura transforma o lugar em experiência.
-  - slug: cat-02
+  - projetos_realizados: "34"
+    slug: cat-02
     local: " "
     periodo: " "
     frase_abertura_linha1: Funcionalidade
@@ -59,7 +61,8 @@ categorias:
     nome: Casas
     desc_indice: Residências que conectam arquitetura, contexto e diferentes formas
       de morar.
-  - slug: cat-03
+  - projetos_realizados: "42"
+    slug: cat-03
     local: " "
     periodo: " "
     frase_abertura_linha1: o melhor
@@ -68,7 +71,8 @@ categorias:
     nome_indice: Apartamentos
     nome: Apartamentos
     desc_indice: Interiores que traduzem personalidade, dia-a-dia e modos de viver.
-  - slug: cat-04
+  - projetos_realizados: "16"
+    slug: cat-04
     local: " "
     periodo: " "
     frase_abertura_linha1: " "
@@ -77,7 +81,8 @@ categorias:
     nome_indice: Comercial
     nome: Comercial
     desc_indice: Espaços corporativos, hospitalidade e varejo.
-  - slug: cat-05
+  - projetos_realizados: "2"
+    slug: cat-05
     local: " "
     periodo: " "
     frase_abertura_linha1: Presença
@@ -86,7 +91,8 @@ categorias:
     nome_indice: Edifícios
     nome: Edifícios
     desc_indice: Projetos com identidade, escala e soluções para grandes empreendimentos.
-  - slug: cat-06
+  - projetos_realizados: "6"
+    slug: cat-06
     local: " "
     periodo: " "
     frase_abertura_linha1: Projetos que
