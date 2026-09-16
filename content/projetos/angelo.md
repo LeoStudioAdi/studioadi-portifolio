@@ -1,33 +1,40 @@
 ---
-titulo: '**Edifício** Angelo'
-categoria: cat-05
-ordem: 9
-paleta: paleta-grafite
-local: São Paulo · Habitação de Interesse Social
-hero_imagem: img/projetos/angelo-01.webp
-hero_alt: Edifício Angelo · fachada
-hero_legenda: Torre vertical · linha coral marcando o corte
+titulo: Ilha de **Creta**
+categoria: cat-03
+ordem: 4
+paleta: paleta-areia
+local: " "
+hero_imagem: img/uploads/1.jpg
+hero_alt: Jd. Paulista
+hero_legenda: " Living integrado · paineis em madeira"
 linha_destaque: true
 dados:
-- label: Tipo
-  valor: Multifamiliar · HIS
-- label: Status
-  valor: Em desenvolvimento
-- label: Ano
-  valor: 2025 — 2026
-- label: Escopo
-  valor: Projeto + gerenciamento
-- label: Imagem
-  valor: Studio render
+  - label: Tipo
+    valor: " Apartamento · alto padrão"
+  - label: Área
+    valor: 235 m²
+  - label: Localização
+    valor: Jardim Paulista · São Paulo
+  - label: Ano
+    valor: "2023"
+  - label: Escopo
+    valor: Projeto
 galeria:
-- imagem: img/projetos/angelo-01.webp
-  alt: Angelo · torre
-  formato: g-half
-- imagem: img/projetos/angelo-02.webp
-  alt: Angelo · acesso noturno
-  formato: g-half
+  - imagem: img/uploads/5.jpg
+    alt: wilson
+    formato: g-wide
+  - imagem: img/uploads/4.jpg
+    alt: wilson
+    formato: g-third
+  - formato: g-half
+    imagem: img/uploads/3.jpg
+    alt: " "
+  - formato: g-half
+    imagem: img/uploads/2.jpg
+    alt: " "
 ---
+No coração de São Paulo, o apartamento combina — linhas suaves, formas orgânicas preservadas, originais do edifício e uma atmosfera acolhedora.
 
-Um edifício magro, vertical, com massas claras e escuras alternadas. A linha coral que percorre o corpo da torre é o gesto que falta na cidade — uma decisão de fachada que vira marca à distância.
+A madeira percorre os ambientes e cria unidade, enquanto os tons neutros ampliam a sensação de leveza e personalidade à composição.
 
-Térreo aberto, portão perfurado, jardim de chegada. *Habitação social que recusa o anonimato.*
+O resultado é uma— *arquitetura serena, elegante e confortável.*
