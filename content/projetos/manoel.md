@@ -10,7 +10,7 @@ hero_legenda: Sala ampla · living e hall de entrada
 linha_destaque: true
 dados:
   - label: Tipo
-    valor: " Apartamento · alto padrão"
+    valor: " Apartamento"
   - label: Área
     valor: 240 m²
   - label: Localização
