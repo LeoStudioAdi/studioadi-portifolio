@@ -32,6 +32,6 @@ galeria:
     alt: Vista · fachada noturna com deck molhado
     formato: g-half
 ---
-Um volume horizontal alongado, encaixado entre a colina e o vale. Concreto branco, caixilharia preta, deck de madeira escura. A casa não cresce do terreno, ela atravessa-o.
+Um volume horizontal alongado, encaixado entre a colina e o vale. Concreto branco, caixilharia preta, deck de madeira escura. *A casa não cresce do terreno, ela atravessa-o.*
 
-Um segundo volume, menor e separado, abriga a suíte como um pavilhão envidraçado independente. *Duas peças no mesmo prado.*
+Um segundo volume, menor e separado, abriga a suíte como um pavilhão envidraçado independente.
