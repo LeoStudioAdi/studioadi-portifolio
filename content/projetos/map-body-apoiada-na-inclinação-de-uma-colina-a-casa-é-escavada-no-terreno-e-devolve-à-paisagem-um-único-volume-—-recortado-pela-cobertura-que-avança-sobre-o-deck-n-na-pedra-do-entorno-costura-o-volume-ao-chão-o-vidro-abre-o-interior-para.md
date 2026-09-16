@@ -6,7 +6,7 @@ paleta: paleta-osso
 local: " "
 hero_imagem: img/uploads/calíope1.jpg
 hero_alt: " "
-hero_legenda: Vista da casa apoiada na encosta
+hero_legenda: Vista da casa parcialmente incorporada na encosta
 linha_destaque: false
 dados:
   - valor: Arquitetura de experiência · Airbnb
