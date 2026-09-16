@@ -32,7 +32,6 @@ galeria:
     alt: Tortugas · vista geral
     formato: g-half
 ---
-
 Um apartamento de praia que renunciou ao óbvio. O piso é de pedra portuguesa irregular — caprichosa, lenta de assentar, impossível de imitar. O teto da sala TV recebe lâminas de madeira jacarandá em duas direções.
 
-A cozinha verde não pede licença. *É o tipo de decisão que só funciona quando o cliente quer mesmo.*
+A vista emoldura o horizonte entre mar e mata — *o mar não é paisagem, é presença constante em cada ambiente.*
