@@ -30,9 +30,9 @@ galeria:
     imagem: img/uploads/caliope8.jpg
     alt: " "
   - formato: g-half
-    imagem: img/uploads/calíope6.jpg
+    imagem: img/uploads/pis.jpg
     alt: " "
 ---
-Apoiada na inclinação de uma colina, a casa é escavada no terreno e devolve à paisagem um único volume — recortado pela cobertura que avança sobre o deck.
+Apoiada na inclinação de uma colina, a casa é escavada no terreno e devolve à paisagem um único volume que acompanha e adentra a topografia — recortado pela cobertura que avança sobre o deck.
 
 A pedra do entorno costura o volume ao chão. O vidro abre o interior para o vale. *O que sobra de obra é o que cabe ao lugar receber.*
