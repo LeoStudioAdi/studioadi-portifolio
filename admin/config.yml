@@ -100,6 +100,11 @@ collections:
               - { label: "Frase de abertura — linha 3 (use **assim** p/ destacar)", name: "frase_abertura_linha3", widget: "string" }
               - { label: "Período (ex.: 2020 — 2026)", name: "periodo", widget: "string" }
               - { label: "Local (ex.: São Paulo · BR)", name: "local", widget: "string" }
+              - label: "Projetos realizados (total)"
+                name: "projetos_realizados"
+                widget: "string"
+                required: false
+                hint: "Aparece no menu lateral, no índice e na abertura da categoria — pode ser o total real de projetos que o studio já fez (ex.: \"120+\"), não precisa ser igual à quantidade publicada no site. Deixe em branco para mostrar automaticamente a quantidade de projetos publicados nesta categoria."
 
   # ---------------------------------------------------------------
   # Projetos — cada projeto é um arquivo. Adicionar/remover projeto
