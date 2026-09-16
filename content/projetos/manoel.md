@@ -33,6 +33,6 @@ galeria:
     alt: belk
     formato: g-half
 ---
-Um apartamento de planta clássica paulista, com janelões basculantes preservados e o pé-direito alto que o tempo já garantiu. A reforma desfaz divisões em excesso e devolve o ambiente único que o edifício pedia.
+A arquitetura valoriza a amplitude dos espaços por meio de uma composição contínua, leve e funcional. A marcenaria branca integra e mimetiza portas e armários, criando superfícies limpas e visualmente silenciosas.
 
-A porta laranja é o gesto autoral — o ponto de cor que organiza o branco ao redor. *Um detalhe que vira régua.*
+A madeira do piso em contraponto a marcenaria clara aquece a paleta neutra, enquanto linhas de luz ressaltam a geometria do projeto — o resultado é *um apartamento sereno, iluminado e acolhedor, com uma elegância discreta.*
