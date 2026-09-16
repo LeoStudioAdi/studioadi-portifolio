@@ -6,7 +6,7 @@ paleta: paleta-neblina
 local: " "
 hero_imagem: img/uploads/euterpe2.jpg
 hero_alt: Euterpe · deck e paisagem
-hero_legenda: Vista de dois volumes brancos em meio a paisagem
+hero_legenda: Vista de dois volumes brancos em meio à paisagem
 linha_destaque: false
 dados:
   - label: Tipo
