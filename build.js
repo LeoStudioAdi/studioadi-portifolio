@@ -129,8 +129,26 @@ function parseBlock(lines, start, minIndent) {
       obj[key] = child === null ? '' : child;
       i = next;
     } else {
-      obj[key] = parseScalar(valueRaw);
-      i++;
+      // Um texto longo (ex.: uma descrição) pode vir "dobrado" pelo painel
+      // em várias linhas, todas indentadas mais que a chave — isso é YAML
+      // válido ("line folding"): as linhas seguintes fazem parte do MESMO
+      // texto e devem virar uma frase só, unidas por espaço. Se a gente não
+      // juntar essas linhas, a leitura do arquivo para bem ali no meio.
+      let value = valueRaw;
+      let j = i + 1;
+      const jaEstaEntreAspas = /^["']/.test(valueRaw);
+      if (!jaEstaEntreAspas) {
+        while (j < lines.length) {
+          const cont = lines[j];
+          if (cont.trim() === '') break;
+          if (indentOf(cont) <= firstIndent) break;
+          if (cont.trim().startsWith('- ')) break;
+          value += ' ' + cont.trim();
+          j++;
+        }
+      }
+      obj[key] = parseScalar(value);
+      i = j;
     }
   }
   return [obj, i];
