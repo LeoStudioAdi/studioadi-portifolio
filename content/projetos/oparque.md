@@ -9,7 +9,7 @@ hero_alt: O Parque · estar e cozinha
 hero_legenda: Sala integrada com cozinha em madeira
 dados:
   - label: Tipo
-    valor: Apartamento · alto padrão
+    valor: Apartamento
   - label: Área
     valor: 170 m²
   - label: Localização
