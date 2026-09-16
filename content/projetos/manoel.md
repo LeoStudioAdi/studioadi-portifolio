@@ -1,5 +1,5 @@
 ---
-titulo: Apto **BELK**
+titulo: Apto **Belk**
 categoria: cat-03
 ordem: 3
 paleta: paleta-marfim
